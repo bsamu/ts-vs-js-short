@@ -1,0 +1,11 @@
+terminal
+mappába be
+ng new *név*
+cd *név*
+ng serve
+
+importok app.module.ts-be mennek
+
+npx tsc --> ts-ből js-t konvertál, mert ts-t nem tudja olvasni a browser vagy tsc után filename, vagy kell egy config file, hogy miből csináljon js-t
+npx tsc --init --> confighoz (tsconfig.json) Angularban ez benne van alapból
+tsconfig.json, "strict": fontos!

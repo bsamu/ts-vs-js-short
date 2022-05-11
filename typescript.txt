@@ -1,0 +1,35 @@
+ts is a "superset to js
+the core programming language is still js, base syntaxes are the same
+adds static typing to js
+
+js on its own is dynamically typed --> ha egy function 2 paramétert vár, nem tudja, hogy milyen típusúak, csak hogy 2 valami
+(function add(a, b) {
+    return a + b;
+}
+
+const result = add(2, 5);
+const result2 = add('2', '5');
+
+console.log(result);
+console.log(result2);
+) mindkettő működik, nem dob errort, hogy 2 számot vár
+
+typescriptben:
+(function add(a: number, b: number) {
+    return a + b;
+}
+
+const result = add(2, 5);
+const result2 = add('2', '5'); --> szól, hogy '2' string, de ő numbert vár
+
+console.log(result);
+console.log(result2);
+)
+
+npx tsc --> ts-ből js-t konvertál, mert ts-t nem tudja olvasni a browser vagy tsc után filename, vagy kell egy config file, hogy miből csináljon js-t
+ha hibát talál a konvertálandó fileban(number typera stringed hívok, mint fent), akkor is csinál belőle egy .js-t, de szól, hogy xy helyen hiba
+constokat átírja még varra (older browserrel is működjön), kell hozzá egy conflict file-t készíteni
+
+we want number string, boolean primitive types, so they start with lowercase
+
+more at: ts-vs-js-short github repo, basics.ts
